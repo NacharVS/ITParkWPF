@@ -5,8 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="520" Width="869" Loaded="Window_Loaded">
     <Grid>
+        <Button x:Name="button" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="652,0,0,0" VerticalAlignment="Center" Height="42" Width="180" Click="button_Click"/>
+        <Label Content="Регистрация игроков" HorizontalAlignment="Left" Margin="642,21,0,0" VerticalAlignment="Top" Width="217" FontSize="20"/>
+        <ListBox x:Name="listBox" Margin="37,39,631,205"/>
+        <ListBox x:Name="listBox1" Margin="358,39,310,205"/>
+        <Label Content="Игроки на сервере" HorizontalAlignment="Left" Margin="37,3,0,0" VerticalAlignment="Top" Width="201" FontSize="16"/>
+        <Label Content="Игроки в команде" HorizontalAlignment="Left" Margin="358,7,0,0" VerticalAlignment="Top" Width="201" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="654,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="37"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="654,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="35"/>
+        <Button x:Name="button1" Content="Добавить в команду" HorizontalAlignment="Left" Margin="37,321,0,0" VerticalAlignment="Top" Width="201" Height="48" Click="button1_Click"/>
 
     </Grid>
 </Window>
