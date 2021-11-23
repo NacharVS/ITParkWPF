@@ -24,5 +24,32 @@ namespace ITParkApp
         {
             InitializeComponent();
         }
+        private void acceptButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Действие выполнено");
+        }
+
+        private void register_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            User.database(new User(name.Text, surname.Text, nickname.Text));
+            name.Text = null;
+            surname.Text = null;
+            nickname.Text = null;
+        }
+
+        private void random_team_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            User.deleteFromdatabase(nickname.Text);
+        }
     }
 }

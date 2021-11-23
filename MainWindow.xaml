@@ -5,8 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ITParkApp"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
+        Title="MainWindow" Height="729" Width="1101">
+    <Grid Margin="0,0,0,-6">
+        <Button Content="Register" HorizontalAlignment="Left" Height="37" Margin="534,292,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click"/>
+        <Button Content="delete player" HorizontalAlignment="Left" Height="37" Margin="672,292,0,0" VerticalAlignment="Top" Width="128" Click="Button_Click_1"/>
+        <ListBox x:Name="teams" HorizontalAlignment="Left" Height="161" Margin="10,230,0,0" VerticalAlignment="Top" Width="256"/>
+        <ListBox x:Name="Users" HorizontalAlignment="Left" Height="163" Margin="10,26,0,0" VerticalAlignment="Top" Width="256"/>
+        <TextBox x:Name="surname" HorizontalAlignment="Left" Height="38" Margin="688,49,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="112"/>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="38" Margin="508,49,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="128"/>
+        <TextBox x:Name="nickname" HorizontalAlignment="Left" Height="43" Margin="588,108,0,0" Text="TextBox" TextWrapping="Wrap" VerticalAlignment="Top" Width="148"/>
+        <Label x:Name="player_description" Content="Player description" HorizontalAlignment="Left" Height="184" Margin="415,457,0,0" VerticalAlignment="Top" Width="183"/>
+        <Label x:Name="team_description" Content="Team description" HorizontalAlignment="Left" Height="184" Margin="672,457,0,0" VerticalAlignment="Top" Width="154"/>
+        <Button x:Name="add_player" Content="Add player" HorizontalAlignment="Left" Height="45" Margin="534,360,0,0" VerticalAlignment="Top" Width="128"/>
+        <Button x:Name="random_team" Content="Random team\" HorizontalAlignment="Left" Height="45" Margin="672,360,0,0" VerticalAlignment="Top" Width="128"/>
 
     </Grid>
 </Window>
