@@ -6,16 +6,27 @@
         xmlns:local="clr-namespace:ITParkApp"
         mc:Ignorable="d"
         Title="MainWindow" Height="520" Width="869" Loaded="Window_Loaded">
-    <Grid>
-        <Button x:Name="button" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="652,0,0,0" VerticalAlignment="Center" Height="42" Width="180" Click="button_Click"/>
+    <Grid HorizontalAlignment="Center" Width="869" Height="504" VerticalAlignment="Top">
+        <Button x:Name="button" Content="Зарегистрировать" HorizontalAlignment="Left" Margin="654,321,0,0" VerticalAlignment="Top" Height="42" Width="180" Click="button_Click"/>
         <Label Content="Регистрация игроков" HorizontalAlignment="Left" Margin="642,21,0,0" VerticalAlignment="Top" Width="217" FontSize="20"/>
-        <ListBox x:Name="listBox" Margin="37,39,631,205"/>
-        <ListBox x:Name="listBox1" Margin="358,39,310,205"/>
-        <Label Content="Игроки на сервере" HorizontalAlignment="Left" Margin="37,3,0,0" VerticalAlignment="Top" Width="201" FontSize="16"/>
-        <Label Content="Игроки в команде" HorizontalAlignment="Left" Margin="358,7,0,0" VerticalAlignment="Top" Width="201" FontSize="16"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="654,82,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="37"/>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="654,151,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="35"/>
-        <Button x:Name="button1" Content="Добавить в команду" HorizontalAlignment="Left" Margin="37,321,0,0" VerticalAlignment="Top" Width="201" Height="48" Click="button1_Click"/>
+        <ListBox x:Name="listBox" Margin="38,46,615,198"/>
+        <Label Content="Игроки на сервере" HorizontalAlignment="Left" Margin="38,10,0,0" VerticalAlignment="Top" Width="216" FontSize="16"/>
+        <Label Content="Название команды:" Margin="358,7,310,466" FontSize="16"/>
+        <TextBox x:Name="textBox" HorizontalAlignment="Left" Margin="654,117,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="37"/>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Margin="653,190,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="35"/>
+        <Button x:Name="button1" Content="Добавить в команду" HorizontalAlignment="Left" Margin="38,318,0,0" VerticalAlignment="Top" Height="48" Click="button1_Click" Width="216"/>
+        <TextBox x:Name="textBox2" HorizontalAlignment="Left" Margin="653,263,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="178" Height="35"/>
+        <Label x:Name="label" Content="Имя пользователя" HorizontalAlignment="Left" Margin="655,86,0,0" VerticalAlignment="Top" Width="177"/>
+        <Label x:Name="label_Copy" Content="Логин" HorizontalAlignment="Left" Margin="654,159,0,0" VerticalAlignment="Top" Width="177"/>
+        <Label x:Name="label_Copy1" Content="Пароль" HorizontalAlignment="Left" Margin="653,232,0,0" VerticalAlignment="Top" Width="177"/>
+        <Button x:Name="button2" Content="Создать команду" Margin="358,374,0,0" VerticalAlignment="Top" Height="48" Click="button2_Click" HorizontalAlignment="Left" Width="201"/>
+        <TextBox x:Name="textBox3" Margin="0,39,310,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="33" HorizontalAlignment="Right" Width="201"/>
+        <Button x:Name="button3" Content="Удалить игрока" Margin="0,321,416,0" VerticalAlignment="Top" Height="34" HorizontalAlignment="Right" Width="95" Click="button3_Click"/>
+        <Button x:Name="button4" Content="Очистить список" Margin="0,321,310,0" VerticalAlignment="Top" Height="34" HorizontalAlignment="Right" Width="101" Click="button4_Click"/>
+        <Separator HorizontalAlignment="Left" Margin="295,208,0,0" VerticalAlignment="Top"/>
+        <GridSplitter x:Name="gridSplitter" HorizontalAlignment="Left" Height="494" Margin="295,0,0,0" VerticalAlignment="Top" Width="0"/>
+        <Button x:Name="button5" Content="Набрать команду случайным образом" Margin="38,374,0,82" MinWidth="150" Click="button5_Click" HorizontalAlignment="Left"/>
+        <ListBox x:Name="listBox1" HorizontalAlignment="Left" Width="202" Height="222" VerticalAlignment="Top" Margin="357,84,0,0"/>
 
     </Grid>
 </Window>

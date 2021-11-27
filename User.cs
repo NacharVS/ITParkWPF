@@ -13,17 +13,23 @@ namespace ITParkApp
     {
 
         private string _login;
+        private string _userName;
+        private int _winsCount = 0;
+        private int _lossCount = 0;
         private string _password;
 
-        public User(string login, string password)
+        public User(string username, string login, string password)
         {
+            UserName = username;
             Login = login;
             Password = _password;
         }
         [BsonId]
         [BsonIgnoreIfDefault]
         public ObjectId  _id { get ; set ; }
-        
+        public int LossCount { get => _lossCount; set => _lossCount = value; }
+        public int WinsCount { get => _winsCount; set => _winsCount = value; }
+        public string UserName { get => _userName; set => _userName = value; }
         public string Login { get => _login; set => _login = value; }
         public string Password { get => _password; set => _password = value; }
 

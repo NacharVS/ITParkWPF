@@ -31,7 +31,7 @@ namespace ITParkApp
 
         private void button_Click(object sender, RoutedEventArgs e)
         {
-            User user1 = new User(textBox.Text, textBox1.Text);
+            User user1 = new User(textBox.Text, textBox1.Text, textBox2.Text);
 
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Matchmaker");
@@ -63,5 +63,40 @@ namespace ITParkApp
         {
             Team.AddToTeam(listBox.SelectedItem.ToString(), listBox1);
         }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            Team.CreateTeam(listBox1, textBox3);
+        }
+
+        private void button3_Click(object sender, RoutedEventArgs e)
+        {
+            Team.DeleteFromTeam(listBox1);
+        }
+
+        private void button4_Click(object sender, RoutedEventArgs e)
+        {
+            listBox1.Items.Clear();
+            textBox3.Text = null;
+        }
+
+        private void button5_Click(object sender, RoutedEventArgs e)
+        {
+            listBox1.Items.Clear();
+            string[] users = new string[listBox.Items.Count];
+            for(int i = 0; i < listBox.Items.Count; i++)
+            {
+                users[i] = listBox.Items[i].ToString();
+            }
+            for(int i = 0; i < 5; i++)
+            {
+                int rnd = new Random().Next(0, listBox.Items.Count);
+
+                if (!listBox1.Items.Contains(users[rnd])) listBox1.Items.Add(users[rnd]);
+                else i--;
+            }
+        }
+
+
     }
 }

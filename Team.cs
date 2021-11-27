@@ -5,19 +5,22 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Controls;
+using System.Windows;
 
 namespace ITParkApp
 {
     class Team
     {
+        private string _name;
         private string _user1;
         private string _user2;
         private string _user3;
         private string _user4;
         private string _user5;
 
-        public Team(User user1, User user2, User user3, User user4, User user5)
+        public Team(string name, User user1, User user2, User user3, User user4, User user5)
         {
+            Name = name;
             User1 = user1.Login;
             User2 = user2.Login;
             User3 = user3.Login;
@@ -32,6 +35,7 @@ namespace ITParkApp
         public string User3 { get => _user3; set => _user3 = value; }
         public string User4 { get => _user4; set => _user4 = value; }
         public string User5 { get => _user5; set => _user5 = value; }
+        public string Name { get => _name; set => _name = value; }
 
         public static void AddToTeam(string login, ListBox listBox)
         {
@@ -39,11 +43,30 @@ namespace ITParkApp
             else System.Windows.MessageBox.Show("Этот игрок уже в команде");
         }
 
-        public void CreateTeam()
+        public static void DeleteFromTeam(ListBox listBox)
+        {
+            listBox.Items.Remove(listBox.SelectedItem);
+        }
+
+        public static void CreateTeam(ListBox listBox, TextBox name)
         {
             var client = new MongoClient("mongodb://localhost");
             var database = client.GetDatabase("Matchmaker");
-            var collection = database.GetCollection<User>("Teams");
+            var collection = database.GetCollection<Team>("Teams");
+
+            if (listBox.Items.Count > 5) MessageBox.Show("Слишком много игроков! В команде должно быть 5 человек!");
+            else if (listBox.Items.Count < 5) MessageBox.Show("Слишком мало игроков! В команде должно быть 5 человек!");
+            else
+            { 
+                User[] usersArray = new User[5];
+                for (int i = 0; i <= 4; i++)
+                {
+                    var coll = database.GetCollection<User>("Users");
+                    usersArray[i] = coll.Find(filter => filter.Login == listBox.Items[i].ToString()).FirstOrDefault();
+                }
+                Team team = new Team(name.Text, usersArray[0], usersArray[1], usersArray[2], usersArray[3], usersArray[4]);
+                collection.InsertOne(team);
+            }
         }
     }
 }
