@@ -6,7 +6,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Controls;
+
 
 namespace ITParkApp {
     class User 
@@ -37,7 +39,7 @@ namespace ITParkApp {
             collection.InsertOne(user);
         }
 
-        public static void ListBoxUpdate(ListBox listbox)
+        public static void ListBoxUpdate(ListBox listBox)
         {
             var conectionString = "mongodb://localhost";
             var client = new MongoClient(conectionString);
@@ -47,7 +49,7 @@ namespace ITParkApp {
 
             foreach (var item in users)
             {
-                listbox.Items.Add(item.Login);
+                listBox.Items.Add(item.Login);
             }
         }
 
