@@ -14,6 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using System.IO;
 
 namespace ITParkApp
 {
@@ -32,6 +33,7 @@ namespace ITParkApp
         public MainWindow()
         {
             InitializeComponent();
+            //File.Create("C:/Users/01/Desktop/ITParkWPF/text.txt");
         }
 
         private void button_Click(object sender, RoutedEventArgs e)
@@ -75,7 +77,11 @@ namespace ITParkApp
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-
+            using (StreamWriter sw = new StreamWriter("C:/Users/01/Desktop/ITParkWPF/text.txt", true))
+            {
+                string st = listBox.SelectedItem.ToString();
+                sw.WriteLine(st);
+            }
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
