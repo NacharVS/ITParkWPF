@@ -9,9 +9,17 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Print Screen 1.jpg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MongoDB.Bson" Version="2.13.2" />
     <PackageReference Include="MongoDB.Driver" Version="2.13.2" />
     <PackageReference Include="MongoDB.Driver.Core" Version="2.13.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Print Screen 1.jpg" />
   </ItemGroup>
 
 </Project>

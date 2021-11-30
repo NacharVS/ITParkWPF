@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 using System.IO;
+using System.Threading;
 
 namespace ITParkApp
 {
@@ -77,11 +78,28 @@ namespace ITParkApp
 
         private void button3_Click(object sender, RoutedEventArgs e)
         {
-            using (StreamWriter sw = new StreamWriter("C:/Users/01/Desktop/ITParkWPF/text.txt", true))
+            byte[] imgArray = File.ReadAllBytes("C:/Users/01/Desktop/ITParkWPF/resize_on_the_fly.jpg");
+            using (FileStream fs = new FileStream("C:/Users/01/Desktop/ITParkWPF/testImgArray.txt", FileMode.OpenOrCreate))
             {
-                string st = listBox.SelectedItem.ToString();
-                sw.WriteLine(st);
+                fs.Write(imgArray);
             }
+
+            Passport passport = new Passport(imgArray);
+            Passport.AddToDatabasePicture(passport);
+            Passport.GetFromDatabasePicture();
+
+            //using (FileStream fs = new FileStream("C:/Users/01/Desktop/ITParkWPF/resize_on_the_fly2222.png", FileMode.OpenOrCreate))
+            //{
+            //    fs.Write(passport.Picture, 0, passport.Picture.Length);
+            //}
+            
+            image.Source = new BitmapImage(new Uri($"C:/Users/01/Desktop/ITParkWPF/{passport._id}.png"));
+
+            //using (StreamWriter sw = new StreamWriter("C:/Users/01/Desktop/ITParkWPF/text.txt", true))
+            //{
+            //    string st = listBox.SelectedItem.ToString();
+            //    sw.WriteLine(st);
+            //}
         }
 
         private void listBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
